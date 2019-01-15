@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	<title>editing {{item.name}}</title>
+</head>
+<body>
+	<div class="sidebar"><a href="{{url_for('homepage')}}" style="font-size: 25"> Catogries</a></div>
+	<div class="main">
+	<p> item name : {{item.name}}</p>
+	<form action="{{url_for('deleteItem' , item_id = item.id)}}" method="POST">
+	<input type="submit" name="delete"></input>
+	</form>
+	</div>
+
+</body>
+</html>

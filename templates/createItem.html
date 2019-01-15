@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a New Item</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+  </script>
+</head>
+<body>
+		<div class="sidebar">
+		<a href="{{url_for('homepage')}}" style="font-size: 25"> Catogries</a>
+	</div>
+	<form action="{{url_for('createItem')}}" method='POST'">
+	<div class="main">
+		<input type="text" name="name" placeholder="   Item name">
+		<br>
+		<br>
+		<input type="text" name="description" placeholder="   Description">
+		<br>
+		<br>
+		<select name="options">
+			<option>rock</option>
+			<option>pop</option>
+		</select>
+		<br>
+		<br>
+		<button type="submit" name="submit" >Submit</button>
+	</div>
+	</form>
+
+</body>
+</html>

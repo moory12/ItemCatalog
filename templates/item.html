@@ -1,0 +1,27 @@
+<html>	
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	{% if button %}
+	<div class="signin"> <a href="{{url_for('gdisconnect')}}"> logOut</a></div>
+	{% else %}
+	<div class="signin"> <a href="{{url_for('loginButton')}}"> signIn</a></div>
+	{% endif %}
+
+<div class="sidebar">
+ <a href="{{url_for('homepage')}}" style="font-size: 25"> Catogries</a>
+</div>
+
+<div class="main">
+ 
+  {% for i in catalog %}
+  <a href="{{url_for('item' ,  item_id = i.id  )}}"> {{i.name}} {{catalog.id}}</a>
+  <br>
+  <br>
+  {% endfor %}
+
+
+</div>
+</body>
+</html>

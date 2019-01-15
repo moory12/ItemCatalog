@@ -1,0 +1,32 @@
+<html>	
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	{% if button %}
+	<div class="signin"> <a href="{{url_for('gdisconnect')}}"> logOut</a></div>
+	{% else %}
+	<div class="signin"> <a href="{{url_for('loginButton')}}"> signIn</a></div>
+	{% endif %}
+
+
+<div class="sidebar">
+  <a href="{{url_for('homepage')}}" style="font-size: 25"> Catogries</a>
+  {% for i in catalog %}
+  <a href="{{url_for('catogary' ,  catalog_id = i.id )}}"> {{i.name}}</a>
+  {% endfor %}
+</div>
+
+<div class="main">
+			{% if button %}
+			<a href="{{url_for('createItem')}}">create item</a>
+			{% endif %}
+			<p style="font-size: 30">Latest items </p>
+			{% for i in range(len-10,len)  %}
+			<p>
+			<a href="{{url_for('item' ,  item_id = item[i].id)}}">{{item[i].name}}<span style="color: grey"> ({{item[i].catalog.name}})</span></a>
+			</p>
+			{% endfor %}
+</div>
+</body>
+</html>
