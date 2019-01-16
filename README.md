@@ -18,7 +18,7 @@
 ### 3- run application.py
 ### 4- run your browser and go to "localhost:8000"
 
-##JSON
+## JSON
 ### you can access all the data at this url "localhost:8000/catalog/json"
 ### you can access a particaler item at this url "localhost:8000/catalog_id/item_id/json" it should look something like this "localhost:8000/1/1/json"
 
