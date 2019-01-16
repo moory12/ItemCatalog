@@ -10,10 +10,10 @@
 	<div class="main">
 	<p> item name : {{item.name}}</p>
 	<form action="{{url_for('editItem' , item_id = item.id)}}" method="POST">
-	<input type="text" name="name" placeholder="new item name"></input>
+	<input type="text" name="name" placeholder="new item name" required></input>
 	<br>
 	<br>
-	<input type="text" name="description" placeholder="new item description"></input>
+	<input type="text" name="description" placeholder="new item description" required></input>
 	<br>
 	<br>
 	<input type="submit" name="submit"></input>

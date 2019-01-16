@@ -34,8 +34,8 @@ class Item(Base):
     name = Column(String(250), nullable=False)
     description = Column(String(250))
     catalog_id = Column(Integer, ForeignKey('catalog.id'))
-    catalog = relationship(Catalog)
-    user_id = Column(Integer,ForeignKey('user.id'))
+    catalog = relationship(Catalog, cascade="save-update")
+    user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
     @property

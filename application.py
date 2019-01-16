@@ -270,7 +270,7 @@ def editItem(item_id):
             output += "}</script><body onload='myFunction()'>"
             return output
         else:
-            if request.form['name']:
+            if not request.form['name']:
                 item.name = request.form['name']
             if request.form['description']:
                 item.description = request.form['description']
@@ -318,6 +318,12 @@ def catalogJSON():
             if j.catalog_id == i.id:
                 x.append(j.serialize)
     return jsonify(catalog=x)
+
+
+@app.route('/<int:catalog_id>/<int:item_id>/json')
+def itemJSON(catalog_id, item_id):
+    item = session.query(Item).filter_by(id=item_id).one()
+    return jsonify(item=[item.serialize])
 
 
 if __name__ == '__main__':
